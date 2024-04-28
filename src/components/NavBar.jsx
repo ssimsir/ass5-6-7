@@ -14,7 +14,7 @@ const NavBar = () => {
 					className="collapse navbar-collapse"
 					id="navbarSupportedContent"
 				>
-					<ul className="navbar-nav ms-auto mb-2 me-3 mb-lg-0">
+					<ul className="navbar-nav ms-auto mb-2 me-5 mb-lg-0">
 						<li className="nav-item">
 							<Link
 								to="/home"
@@ -50,15 +50,11 @@ const NavBar = () => {
 							>
 								Github Followers - ass7
 							</Link>
-							<li className="nav-item">
-							<Link
-								to="/githubFollowers"
-								className="nav-link"
-								aria-current="page"
-							>
+						</li>
+						<li className="nav-item">
+							<Link to="/" className="nav-link" aria-current="page">
 								Logout
 							</Link>
-						</li>
 						</li>
 					</ul>
 				</div>

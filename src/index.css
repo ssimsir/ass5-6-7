@@ -17,3 +17,19 @@ code {
   text-decoration: underline;
   margin-left: 1rem;
 }
+
+.mainClass{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainClass button{
+  margin-left: 2rem;
+}
+
+
+.mainClass div{
+  margin-left: 2rem;
+}

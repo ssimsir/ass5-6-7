@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import loadingGif from "../../assets/loading.gif";
+import { AuthContext } from "../../context/AuthProvider";
 
 const LoginForm = () => {
 	const [showModal, setShowModal] = useState(false);
@@ -12,6 +13,8 @@ const LoginForm = () => {
 	const handleCloseModal = () => setShowModal(false);
 
 	const [user, setUser] = useState({ email: "", password: "" });
+
+	const {loginContext} = useContext(AuthContext)
 
 	const navigate = useNavigate();
 
@@ -24,8 +27,11 @@ const LoginForm = () => {
 			.then((result) => result.json())
 			.then((data) => {
 				if (data[0]) {
+					
+					loginContext(data[0])
 					console.log(data[0]);
 					setLoading(true);
+					
 					setTimeout(() => {
 						setLogin(data[0]);
 						navigate("/home");
@@ -36,7 +42,7 @@ const LoginForm = () => {
 			})
 			.catch((error) => console.log(error));
 	};
-
+	
 	return (
 		<div>
 			{loading ? (

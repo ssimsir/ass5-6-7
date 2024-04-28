@@ -7,10 +7,13 @@ import GithubFollowers from "./pages/GithubFollowers";
 import Checkout from "./pages/Checkout";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AuthProvider from "./context/AuthProvider";
 
 function App() {
   return (
     <BrowserRouter>
+    
+    <AuthProvider>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/home" element={<Home />} />
@@ -19,6 +22,7 @@ function App() {
         <Route path="/clarusBlog" element={<ClarusBlog />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 }
